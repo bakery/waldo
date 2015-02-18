@@ -1,0 +1,23 @@
+// core variables
+@import "variables";
+
+// utilities
+@import "utilities";
+
+// core css
+@import "global";
+
+@import "animations";
+
+// components css
+@import "common";
+@import "post";
+@import "media-card";
+@import "location";
+@import "channel";
+@import "locations";
+@import "login";
+
+// overide css
+@import ".meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic";
+@import ".meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons";

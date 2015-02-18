@@ -1,0 +1,47 @@
+<template name="newChannel">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Create Channel</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-light" text=false}}
+    {{/contentFor}}
+
+
+    {{#ionView}}
+        {{#ionContent classes="content overflow-scroll"}}      
+            
+            <!-- hack -->
+            
+
+            <div class="list card">
+                <div class="item item-avatar">
+                    <img src="{{currentUserImageUrl}}">
+                    <h2>{{currentUserName}}</h2>
+                </div>
+
+                {{#autoForm collection="Channels" type="insert" id="channelForm" resetOnSuccess=false}}
+
+                    {{#if validationError}}
+                        <div class="item" style="text-align:center;color:red;">
+                            <span>{{validationError}}</span>
+                        </div>
+                    {{/if}}
+
+                    <div class="item">
+                        {{> afFieldInput name='name' placeholder="Channel name (letter and numbers only)" style="padding:1em;"}}
+                    </div>
+
+                    <div class="item" style="text-align:center;">
+                        {{> afFieldInput name='description' rows=5 placeholder="Channel description" style="padding:1em;"}}
+                    </div>
+                    
+                    <div class="item" style="text-align:center;">
+                        <button class="button button-light btn-post">{{> ionIcon icon="paper-airplane"}} Create</button>
+                    </div>
+                    
+                {{/autoForm}}
+            </div>
+        {{/ionContent}}
+    {{/ionView}}
+</template>

@@ -1,0 +1,65 @@
+<template name="showPost">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Post</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-light" text=false}}
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#if isReady}}
+                {{#with post}}
+                    <div class="post">
+                        <div class="item">
+                            <h2><i class="ion-location"></i> {{locationName}}</h2> 
+                        </div>
+
+                        {{> postItem post=this showChannels=true }}
+                        
+                        <div class="item" style="padding:0;">
+                            <div class="map-container" style="width:100%; height:200px;">
+                                {{> googleMap name="exampleMap" options=mapOptions}}
+                            </div>
+                        </div>
+
+                        {{#if formattedAddress}}
+                            <div class="item item-divider">
+                                {{formattedAddress}}    
+                            </div>
+                        {{/if}}
+
+                        <!-- <div class="item">
+                            {{#if notLikedByMe}}
+                                <a class="btn-like" href="#"><i class="icon ion-thumbsup"></i></a>    
+                            {{/if}}
+
+                            {{#if numberOfLikes}}
+                                <a href="#" class="subdued">{{pluralize numberOfLikes 'Like' 'Likes'}}</a>
+                            {{/if}}
+
+                            {{#if numberOfComments}}
+                                <a href="#" class="subdued">{{pluralize numberOfComments 'Comment' 'Comments'}}</a>
+                            {{/if}}
+                        </div> -->
+                        
+                        {{#if comments}}
+                            {{#each comments}}
+                                <a class="item item-avatar">
+                                  <img src="{{authorProfile.imageUrl}}">
+                                  <h4>{{authorProfile.name}} <span class="subdued" style="font-size:12px;color:#ccc;">{{prettyTime}}</span></h4>
+                                  <p>{{text}}</p>
+                                </a>
+                            {{/each}}
+                        {{/if}}
+
+                        {{> commentBox postId=_id }}
+                    </div>
+                {{/with}}
+            {{else}}
+                {{> loading}}
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

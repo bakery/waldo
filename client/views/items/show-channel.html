@@ -1,0 +1,36 @@
+<template name="showChannel">
+        {{#contentFor "headerTitle"}}
+            <h1 class="title">#{{channel.name}}</h1>
+        {{/contentFor}}
+
+        {{#contentFor "headerButtonLeft"}}
+            {{>ionNavBackButton class="button-light" text=false}}
+        {{/contentFor}}
+
+        {{#contentFor "headerButtonRight"}}
+            {{#if isReady}}
+                {{#if isCurrentUserAMember}}
+                    <button onclick="{{launchPostScript}}" class="button button-clear">{{> ionIcon icon="compose"}}</button>
+                {{else}}
+                    <button onclick="{{joinChannelScript}}" class="button button-clear btn-join-channel">{{> ionIcon icon="person-add"}}</button>
+                {{/if}}
+            {{/if}}
+        {{/contentFor}}
+
+        {{#ionView}}
+            {{#ionContent}}
+                {{#if isReady}}
+                    {{#ionList}}
+                        {{#each posts}}
+                            <div class="post">
+                                {{> postItem post=this path="showPost" showChannels=false }}
+                            </div>
+                        {{/each}}
+                    {{/ionList}}
+                {{else}}
+                    {{> loading}}
+                {{/if}}
+
+            {{/ionContent}}
+        {{/ionView}}
+</template>

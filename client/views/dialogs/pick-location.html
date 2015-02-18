@@ -1,0 +1,34 @@
+<template name="pickLocationDialog">
+    {{#ionModal title="Where are you?"}}
+        <ul class="list">
+            
+            {{#if isNotCordova}}
+                <label class="item item-input">
+                    <input name="what" type="text" placeholder="What?">
+                </label>
+                <label class="item item-input">
+                    <input name="where" type="text" placeholder="Where?">
+                </label>
+                
+                <button class="button button-block button-positive activated search">Find</button>
+            {{/if}}
+        
+            {{#each locations}}
+                <label class="item item-radio">
+                    <input type="radio" name="group" data-id="{{id}}" data-name="{{name}}" {{checkedAttribute this}}>
+                    <!-- <div class="item-content">
+                        {{#if icon}}<img src="{{icon}}">{{/if}}
+                        {{name}}
+                    </div> -->
+
+                    <div class="item item-avatar">
+                        {{#if icon}}<img src="{{icon}}">{{/if}}
+                        <h2>{{name}}</h2>
+                    </div>
+
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+            {{/each}}
+        </ul>
+    {{/ionModal}}
+</template>

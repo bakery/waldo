@@ -1,0 +1,79 @@
+html, body, textarea {
+    font-family: $font-family;
+    color: $default-text-color;
+}
+
+.bar {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    border-bottom: 0;
+}
+
+.title {
+    color: $primary-text-color;
+}
+
+// ratchet overrides
+
+.card {
+    margin: 10px 0;
+}
+
+.table-view .table-view-cell {
+    background-position: 0 100%;
+}
+
+.btn-primary {
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+
+    &:active {
+        background-color: darken($secondary-color, 20%);
+        border: 1px solid darken($secondary-color, 20%);
+    }
+}
+
+// end ratchet overides
+
+.checkin-bar {
+    height: 88px;
+    overflow: hidden;
+    padding: 14px 15px 14px 15px;
+
+    .profile {
+        float: none;
+        width: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .username {
+        line-height: 44px;
+    }
+
+    .profile-pic {
+        margin-right: 15px;
+        border-radius: 4px;
+    }
+
+    .profile-pic, .username {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .checkin-prompt {
+        float: right;
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+        top: 0px;
+        font-size: 28px;
+        color: $secondary-color;
+        border: none;
+    }
+
+}
+
+.bar-nav ~ .content.collapsed {
+    padding-top: 88px;
+}

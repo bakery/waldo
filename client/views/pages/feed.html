@@ -1,0 +1,27 @@
+<template name="feed">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Feed</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <a class="button button-clear pull-right" data-ion-modal="newPostDialog">
+            {{> ionIcon icon="compose"}}
+        </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#if isReady}}
+                {{#ionList}}
+                    {{#each posts}}
+                        <div class="post">
+                            {{> postItem post=this path="showPost" showChannels=true }}
+                        </div>
+                    {{/each}}
+                {{/ionList}}
+            {{else}}
+                {{> loading}}
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

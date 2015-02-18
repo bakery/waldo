@@ -1,0 +1,36 @@
+<template name="postItem">
+    {{#with post}}
+        {{#ionItem path=../path }}
+            <div class="profile-image-wrapper clear">
+                <img src="{{authorProfile.imageUrl}}">
+            </div>
+            <div class="meta">
+                <strong>{{authorProfile.name}}</strong>
+                {{#if locationName}}
+                    <br><span class="location"><i class="ion-location"></i>  {{locationName}}</span>
+                {{/if}}
+                <br><span class="time">{{prettyTime}}</span>
+            </div>
+            <div class="body-wrapper">
+                <p class="post-content">{{{prettyPostContent text}}}</p>
+
+                {{#if linkMetadata}}
+                    {{> mediaCard content=text meta=linkMetadata }}
+                {{/if}}
+
+
+                {{#if photo}}
+                    <img src="{{photo}}">
+                {{/if}}
+                
+                {{#if ../showChannels}}
+                <span class="in-channel">
+                    {{#each channels}} 
+                        <a class="button button-stable button-small" href="/channel/{{_id}}">#{{name}}</a>
+                    {{/each}}
+                </span>
+                {{/if}}
+            </div>
+        {{/ionItem}}
+    {{/with}}
+</template>

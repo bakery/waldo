@@ -1,0 +1,26 @@
+<template name="showLocation">
+		{{#contentFor "headerTitle"}}
+            <h1 class="title">{{location.city}}</h1>
+        {{/contentFor}}
+
+        {{#contentFor "headerButtonLeft"}}
+            {{>ionNavBackButton class="button-light" text=false}}
+        {{/contentFor}}
+
+        {{#ionView}}
+            {{#ionContent}}
+                {{#if isReady}}
+                    {{#ionList}}
+                        {{#each posts}}
+                            <div class="post">
+                                {{> postItem post=this path="showPost" showChannels=true }}
+                            </div>
+                        {{/each}}
+                    {{/ionList}}
+                {{else}}
+                    {{> loading}}
+                {{/if}}
+
+            {{/ionContent}}
+        {{/ionView}}
+</template>

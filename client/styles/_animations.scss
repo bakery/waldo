@@ -1,0 +1,85 @@
+@-webkit-keyframes jump {
+    0% {
+        transform : translate(0,-30%);
+        -webkit-transform : translate(0,-30%);
+    }
+
+    25% {
+        transform : translate(0,0);
+        -webkit-transform : translate(0,0);
+    }
+
+    50% {
+        transform : translate(0,-30%);
+        -webkit-transform : translate(0,-30%);
+    }   
+
+    75% {
+        transform : translate(0,0);
+        -webkit-transform : translate(0,0);
+    }
+
+    100% {
+        transform : translate(0,-30%);
+        -webkit-transform : translate(0,-30%);
+    }
+}
+
+// @-moz-keyframes jump {
+//  0% {
+//      @include transform(translate(0,-30%));
+//  }
+
+//  25% {
+//      @include transform(translate(0,0));
+//  }
+
+//  50% {
+//      @include transform(translate(0,-30%));
+//  }   
+
+//  75% {
+//      @include transform(translate(0,0));
+//  }
+
+//  100% {
+//      @include transform(translate(0,-30%));
+//  }
+// }
+
+@mixin jumping-animation {
+    -webkit-animation: jump 1s infinite;
+    -moz-animation: jump 1s infinite;
+}
+
+.jumping-label {
+    display : block;
+    @include jumping-animation;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spinning-animation {
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

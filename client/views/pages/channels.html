@@ -1,0 +1,27 @@
+<template name="channels">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Channels</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <a class="button button-clear" href="/new-channel">{{> ionIcon icon="ios-plus-empty"}}</a>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Find channel">
+            </label>
+            {{#if isReady}}
+                {{#each channels}}
+                    <div class="post">
+                        {{> channel channel=this path="showChannel"}}
+                    </div>
+                {{/each}}
+            {{else}}
+                {{> loading}}
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

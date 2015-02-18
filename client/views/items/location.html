@@ -1,0 +1,19 @@
+<template name="location">
+    {{#with location}}
+        {{#ionItem path=../path}}
+            <div class="location-item">
+                <strong>{{city}}</strong><br>
+                    {{#if countryCode}}
+                    <span class="flag-icon flag-icon-{{toLowerCase countryCode}}" style="width:15px;"></span>
+                    {{/if}}
+                    <span class="subtitle">{{country}}</span><br>
+                <!-- <div class="profile-image-wrapper">
+                    <span class="ion-location"></span>
+                </div>
+                <div class="body-wrapper">
+                    
+                </div> -->
+            </div>
+        {{/ionItem}}
+    {{/with}}
+</template>

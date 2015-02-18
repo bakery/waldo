@@ -1,0 +1,24 @@
+.channel-item {
+    width: 100%;
+
+    $pin-font-size:30px;
+
+    .profile-image-wrapper {
+        font-size: $pin-font-size;
+        height: 1px;
+    }
+
+    .body-wrapper {
+        padding-left: 1.3*$pin-font-size;
+        margin-top: -1px;
+        .description {
+            color: $dark-grey-color;
+            font-size: 12px;
+        }
+
+        .stats {
+            color: $dark-grey-color;
+            font-size: 12px;       
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<template name="person">
+    {{#with person}}
+        {{#ionItem}}
+            <div class="person-item">
+                <div class="profile-image-wrapper">
+                    <img src="{{profilePicture}}">
+                </div>
+                <div class="body-wrapper">
+                    <strong>{{name}}</strong>
+                    <span class="time">{{prettyCheckinTime}}</span>
+                    <br>
+                    {{#if locationName}}
+                        <span class="location"><i class="ion-location"></i> Last seen at {{locationName}} </span>
+                    {{/if}}
+                </div>
+            </div>
+        {{/ionItem}}
+    {{/with}}
+</template>

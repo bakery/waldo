@@ -1,0 +1,35 @@
+.location-selector-modal {
+
+    .location {
+        white-space: nowrap;
+    }
+
+    .location:active {
+        background-color: #eee;
+    }
+
+    .location-name {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-right: 32px;
+    }
+
+    .location-icon, 
+    .location-name {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .location-icon {
+        width: 32px;
+        margin-right: 10px;
+    }
+
+    .icon-close:before {
+        font-family: FontAwesome;
+        content: '\f00d';
+        color: $primary-text-color;
+    }
+}

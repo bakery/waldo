@@ -1,0 +1,17 @@
+<template name="login">
+    {{#ionView}}
+        {{#ionContent}}
+            {{#ionList}}
+            <div style="text-align:center;">
+                <div style="font-size:60px; margin:2em 0 2em 0;" class="ion-pizza"></div>
+
+                {{#if working}}
+                    <div style="position:relative;">{{> loading }}</div>
+                {{else}}
+                    <button class="button button-light login-facebook">{{> ionIcon icon="social-facebook-outline"}} Login with Facebook</button>
+                {{/if}}
+            </div>        
+            {{/ionList}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

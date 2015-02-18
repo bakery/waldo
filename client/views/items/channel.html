@@ -1,0 +1,15 @@
+<template name="channel">
+    {{#with channel}}
+        {{#ionItem path=../path}}
+            <div class="channel-item">
+                <div class="profile-image-wrapper">
+                    <span class="ion-pound"></span>
+                </div>
+                <div class="body-wrapper">
+                    <strong>{{name}}</strong><br>
+                    <span class="description">{{{description}}}</span>
+                </div>
+            </div>
+        {{/ionItem}}
+    {{/with}}
+</template>

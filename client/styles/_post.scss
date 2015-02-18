@@ -1,0 +1,71 @@
+// .card {
+//     &.items {
+//         border: none;
+//         .table-view-cell {
+//             padding: 11px 11px 11px 15px;
+//         }
+//     }
+// }
+
+
+
+.engagement {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.post {
+    width: 100%;
+
+    p.post-content {
+        padding: 0.5em 0.5em 0.5em 0;
+        overflow: visible;
+        white-space: normal;
+        a {
+            text-decoration: none;
+        }
+    }    
+
+    .profile-image-wrapper {
+        img {
+            width: $profile-image-size;
+            height: $profile-image-size;
+            border-radius: 4px;
+            float:left;
+        }
+
+        height: 1px;
+    }
+
+    .meta {
+        margin-top: -5px;
+        padding-left: 60px;
+    }
+
+    .body-wrapper {
+        //padding-left: $profile-image-size*1.2;
+        margin-top: -1px;
+        img {
+            display: block;
+            width: $checkin-image-size;
+        }
+    }
+
+    .location {
+        font-size: 12px;
+    }
+
+     .time {
+        font-size: 12px;
+        margin-top: -3px;
+        display: block;
+        color: $dark-grey-color;  
+    }
+
+    .in-channel {
+        font-size: 12px;
+        color : #ccc;
+        display: block;
+        margin-top: 10px;
+    }
+}

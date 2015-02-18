@@ -1,0 +1,25 @@
+<template name="locations">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Locations</h1>
+    {{/contentFor}}
+
+    <!-- {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-modal="_contactsNew">{{> ionIcon icon="ios-plus-empty"}}</button>
+    {{/contentFor}} -->
+
+    {{#ionView}}
+        {{#ionContent}}
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Find location">
+            </label>
+            {{#if isReady}}
+                {{#each locations}}
+                    {{> location location=this path="showLocation"}}
+                {{/each}}
+            {{else}}
+                {{> loading}}
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
