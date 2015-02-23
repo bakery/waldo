@@ -14,7 +14,8 @@
             {{#if isReady}}
                 {{#ionList}}
                     {{#each posts}}
-                        <div class="post">
+                        <!-- <div class="post"> -->
+                        <div class="list card">
                             {{> postItem post=this path="showPost" showChannels=true }}
                         </div>
                     {{/each}}

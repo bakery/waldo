@@ -1,17 +1,18 @@
 <template name="postItem">
     {{#with post}}
-        {{#ionItem path=../path }}
-            <div class="profile-image-wrapper clear">
-                <img src="{{authorProfile.imageUrl}}">
-            </div>
-            <div class="meta">
-                <strong>{{authorProfile.name}}</strong>
+        <div class="post">
+            <div class="item">
                 {{#if locationName}}
-                    <br><span class="location"><i class="ion-location"></i>  {{locationName}}</span>
+                    <i class="ion-location"></i>  {{locationName}}
                 {{/if}}
-                <br><span class="time">{{prettyTime}}</span>
             </div>
-            <div class="body-wrapper">
+            <div class="item item-avatar">
+                <img src="{{authorProfile.imageUrl}}">
+                <h2>{{authorProfile.name}}</h2>
+                <p>{{prettyTime}}</p>
+            </div>
+
+            <div class="item item-body">
                 <p class="post-content">{{{prettyPostContent text}}}</p>
 
                 {{#if linkMetadata}}
@@ -20,17 +21,19 @@
 
 
                 {{#if photo}}
-                    <img src="{{photo}}">
+                    {{> postImage url=photo}}
                 {{/if}}
                 
                 {{#if ../showChannels}}
-                <span class="in-channel">
-                    {{#each channels}} 
-                        <a class="button button-stable button-small" href="/channel/{{_id}}">#{{name}}</a>
-                    {{/each}}
-                </span>
+                <p>
+                    <span class="in-channel">
+                        {{#each channels}} 
+                            <a class="button button-stable button-small" href="/channel/{{_id}}">#{{name}}</a>
+                        {{/each}}
+                    </span>
+                </p>
                 {{/if}}
             </div>
-        {{/ionItem}}
+        </div>
     {{/with}}
 </template>
