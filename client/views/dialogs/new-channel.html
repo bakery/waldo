@@ -1,0 +1,35 @@
+<template name="newChannelDialog">
+    {{#ionModal customTemplate=true}}
+        {{#autoForm collection="Channels" type="insert" id="channelForm" resetOnSuccess=false}}
+            <div class="bar bar-header bar-stable">
+                <button data-dismiss="modal" class="button button-small button-icon">
+                    <i class="icon ion-ios-close-empty"></i>
+                </button>
+
+                <button type="submit" class="button button-small button-light btn-post">Create</button>
+            </div>
+
+            <div class="content has-header">
+
+                <div class="item item-avatar">
+                    <img src="{{currentUserImageUrl}}">
+                    <h2>{{currentUserName}}</h2>
+                </div>
+
+                {{#if validationError}}
+                    <div class="item" style="text-align:center;color:red;">
+                        <span>{{validationError}}</span>
+                    </div>
+                {{/if}}
+
+                <div class="item">
+                    {{> afFieldInput name='name' placeholder="Channel name (letter and numbers only)" style="padding:1em;"}}
+                </div>
+
+                <div class="item" style="text-align:center;">
+                    {{> afFieldInput name='description' rows=5 placeholder="Channel description" style="padding:1em;"}}
+                </div>
+            </div>
+        {{/autoForm}}
+    {{/ionModal}}
+</template>
