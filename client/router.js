@@ -30,10 +30,6 @@ Router.route('/login', function(){
     this.render('login');
 });
 
-Router.route('/new-channel', {
-    name: 'newChannel'
-});
-
 Router.route('/post/:_id', {
     name: 'showPost',
     data : function(){
