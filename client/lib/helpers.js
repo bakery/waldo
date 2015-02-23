@@ -52,3 +52,7 @@ Template.registerHelper('isCordova', function(){
 Template.registerHelper('isNotCordova', function(){
     return !Meteor.isCordova;
 });
+
+Template.registerHelper('compact', function(string, length){
+    return string && string.length > length ? [string.substring(0,length),'...'].join('')  : string;
+});
