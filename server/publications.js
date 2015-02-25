@@ -10,12 +10,14 @@ Meteor.publish('all-users', function(){
     return Meteor.users.find();
 });
 
-Meteor.publish('feed', function(location){
+Meteor.publish('feed', function(location, limit){
 
     check(location, {
         latitude: Number,
         longitude: Number
     });
+
+    check(limit, Number);
 
     return Posts.find({
             channelIds: { $in: ChannelHelpers.chanelIdsForUser(this.userId) },
@@ -29,10 +31,12 @@ Meteor.publish('feed', function(location){
                 }
             }     
         }, {
-        sort : {
-            createdAt : -1
+            limit : limit,
+            sort : {
+                createdAt : -1
+            }
         }
-    });
+    );
 });
 
 Meteor.publish('post-by-id', function(id){
