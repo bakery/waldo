@@ -28,7 +28,6 @@ ScrollHelper = {
     },
 
     _checkInfiniteBounds: function(scrollEl,callback) {
-        if (self.isLoading) return;
         var maxScroll = {};
     
         maxScroll = this.getNativeMaxScroll(scrollEl);
