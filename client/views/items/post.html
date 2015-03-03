@@ -1,39 +1,52 @@
 <template name="postItem">
     {{#with post}}
         <div class="post">
-            <div class="item">
-                {{#if locationName}}
-                    <i class="ion-location"></i>  {{locationName}}
-                {{/if}}
-            </div>
-            <div class="item item-avatar">
-                <img src="{{authorProfile.imageUrl}}">
-                <h2>{{authorProfile.name}}</h2>
-                <p>{{prettyTime}}</p>
-            </div>
+            {{#if ../tight}}
+                <div class="item">
+                    {{#if locationName}}
+                        <i class="ion-location"></i>  {{locationName}}
+                    {{/if}}
+                </div>
+                <div class="item item-body">
+                    <p class="post-content">
+                        <img src="{{authorProfile.imageUrl}}" style="width: 20px;border-radius: 50px;margin-bottom: -5px;">&nbsp;<strong>{{authorProfile.name}}</strong>-&nbsp;{{compact text 140}}
+                    </p>
+                </div>
+            {{else}}
+                <div class="item">
+                    {{#if locationName}}
+                        <i class="ion-location"></i>  {{locationName}}
+                    {{/if}}
+                </div>
+                <div class="item item-avatar">
+                    <img src="{{authorProfile.imageUrl}}">
+                    <h2>{{authorProfile.name}}</h2>
+                    <p>{{prettyTime}}</p>
+                </div>
 
-            <div class="item item-body">
-                <p class="post-content">{{{prettyPostContent text}}}</p>
+                <div class="item item-body">
+                    <p class="post-content">{{{prettyPostContent text}}}</p>
 
-                {{#if linkMetadata}}
-                    {{> mediaCard content=text meta=linkMetadata }}
-                {{/if}}
+                    {{#if linkMetadata}}
+                        {{> mediaCard content=text meta=linkMetadata }}
+                    {{/if}}
 
 
-                {{#if photo}}
-                    {{> postImage url=photo}}
-                {{/if}}
-                
-                {{#if ../showChannels}}
-                <p>
-                    <span class="in-channel">
-                        {{#each channels}} 
-                            <a class="button button-stable button-small" href="/channel/{{_id}}">#{{name}}</a>
-                        {{/each}}
-                    </span>
-                </p>
-                {{/if}}
-            </div>
+                    {{#if photo}}
+                        {{> postImage url=photo}}
+                    {{/if}}
+                    
+                    {{#if ../showChannels}}
+                    <p>
+                        <span class="in-channel">
+                            {{#each channels}} 
+                                <a class="button button-stable button-small" href="/channel/{{_id}}">#{{name}}</a>
+                            {{/each}}
+                        </span>
+                    </p>
+                    {{/if}}
+                </div>
+            {{/if}}
         </div>
     {{/with}}
 </template>
