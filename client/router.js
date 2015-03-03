@@ -9,7 +9,7 @@ Router.onBeforeAction(function() {
         this.next();
     }
 }, {
-    except: ['login']
+    except: ['login','explore']
 });
 
 Router.onBeforeAction(function() {
@@ -17,6 +17,10 @@ Router.onBeforeAction(function() {
     this.next();
 }, { only: ['showPost'] });
 
+
+Router.route('/explore', {
+    name: 'explore'
+});
 
 Router.route('/', {
     name: 'feed',

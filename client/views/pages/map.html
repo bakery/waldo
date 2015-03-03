@@ -1,0 +1,23 @@
+<template name="explore">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Maps</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#nativeMap currentLocation=currentLocation center=center markers=markers }}
+                <div class="card" style="margin:0;">
+                    {{#if isReady}}
+                        {{#if selectedPost}}
+                            {{#with selectedPost}}
+                                {{> postItem tight=true post=this path="showPost"}}
+                            {{/with}}
+                        {{/if}}
+                    {{else}}
+                        loading...
+                    {{/if}}
+                </div>
+            {{/nativeMap}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
