@@ -13,7 +13,6 @@ mdg:camera
 matb33:collection-hooks
 mrt:moment
 simple:imgur
-accounts-facebook
 accounts-password
 meteoric:ionic-sass
 meteoric:ionicons-sass
@@ -23,3 +22,4 @@ thebakery:open-graph-scraper
 dburles:google-maps
 meteorhacks:kadira
 thebakery:mobile-map
+particle4dev:cordova-fb

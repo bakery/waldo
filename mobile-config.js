@@ -16,3 +16,9 @@ App.configurePlugin('plugin.google.maps', {
     'API_KEY_FOR_IOS': 'AIzaSyA6TONWD6mlqfqWaMyiGzJWnXG7ij2Eukk',
     '$API_KEY_FOR_ANDROID' : 'whatever'
 });
+
+App.configurePlugin('com.phonegap.plugins.facebookconnect', {
+    'APP_ID': '726404297407462',
+    'APP_NAME': 'Waldo-local',
+    'secret': 'a68da2dfe483f518859cb787bfccf499'
+});

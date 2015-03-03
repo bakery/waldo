@@ -1,7 +1,7 @@
 Meteor.startup(function(){
-    Accounts.loginServiceConfiguration.remove({
-        service : 'facebook'
-    });
+    // Accounts.loginServiceConfiguration.remove({
+    //     service : 'facebook'
+    // });
 
     Accounts.loginServiceConfiguration.insert({
         service     : 'facebook',
