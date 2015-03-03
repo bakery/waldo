@@ -81,6 +81,7 @@ spacebars-compiler@1.0.4
 srp@1.0.2
 standard-app-packages@1.0.4
 templating@1.0.11
+thebakery:mobile-map@0.0.1
 thebakery:open-graph-scraper@0.0.1
 tracker@1.0.5
 ui@1.0.5
