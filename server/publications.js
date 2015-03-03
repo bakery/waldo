@@ -39,6 +39,34 @@ Meteor.publish('feed', function(location, limit){
     );
 });
 
+Meteor.publish('anonymous-feed', function(location, limit){
+
+    check(location, {
+        latitude: Number,
+        longitude: Number
+    });
+
+    check(limit, Number);
+
+    return Posts.find({
+            location : { 
+                $near : {
+                    $geometry: { 
+                        type:"Point", 
+                        coordinates:[ location.longitude, location.latitude ]
+                    },
+                    $maxDistance: 20*1000 // 20km 
+                }
+            }     
+        }, {
+            limit : limit,
+            sort : {
+                createdAt : -1
+            }
+        }
+    );
+});
+
 Meteor.publish('post-by-id', function(id){
     return [
         Posts.find({ _id : id }),
