@@ -18,7 +18,7 @@ App.configurePlugin('plugin.google.maps', {
 });
 
 App.configurePlugin('com.phonegap.plugins.facebookconnect', {
-    'APP_ID': '726404297407462',
-    'APP_NAME': 'Waldo-local',
-    'secret': 'a68da2dfe483f518859cb787bfccf499'
+    'APP_ID': '560084787455080',
+    'APP_NAME': 'Waldo',
+    'secret': '19b8bdbd742a41e48c1c964c6de562c0'
 });
