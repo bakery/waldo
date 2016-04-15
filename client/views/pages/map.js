@@ -9,6 +9,7 @@ Template.explore.helpers({
         return Template.explore.current.ready.get();
     },
     currentLocation : function(){
+        console.error('currentLocation is', Helpers.getCurrentLocationOnce());
         return Helpers.getCurrentLocationOnce();
     },
     markers : function(){

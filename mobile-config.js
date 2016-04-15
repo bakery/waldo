@@ -12,13 +12,6 @@ App.icons({
     // 'android_xhdpi': 'resources/icons/icon-xhdpi.png'
 });
 
-App.configurePlugin('plugin.google.maps', {
-    'API_KEY_FOR_IOS': 'AIzaSyA6TONWD6mlqfqWaMyiGzJWnXG7ij2Eukk',
-    '$API_KEY_FOR_ANDROID' : 'whatever'
-});
-
-App.configurePlugin('com.phonegap.plugins.facebookconnect', {
-    'APP_ID': '560084787455080',
-    'APP_NAME': 'Waldo',
-    'secret': '19b8bdbd742a41e48c1c964c6de562c0'
+App.configurePlugin('cordova-plugin-googlemaps', {
+  'API_KEY_FOR_IOS': process.env.GOOGLE_MAPS_API_KEY,
 });

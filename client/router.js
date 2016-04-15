@@ -2,15 +2,15 @@ Router.configure({
     layoutTemplate: 'layout'
 });
 
-Router.onBeforeAction(function() {
-    if (!Meteor.userId()) {
-        Router.go('login');
-    } else {
-        this.next();
-    }
-}, {
-    except: ['login','explore']
-});
+// Router.onBeforeAction(function() {
+//     if (!Meteor.userId()) {
+//         Router.go('login');
+//     } else {
+//         this.next();
+//     }
+// }, {
+//     except: ['login','explore']
+// });
 
 Router.onBeforeAction(function() {
     GoogleMaps.load();

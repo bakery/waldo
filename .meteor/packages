@@ -22,4 +22,5 @@ thebakery:open-graph-scraper
 dburles:google-maps
 meteorhacks:kadira
 thebakery:mobile-map
-particle4dev:cordova-fb
+standard-minifier-css
+standard-minifier-js
